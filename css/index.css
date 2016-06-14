@@ -1,4 +1,4 @@
-.table1{ 
+.table{ 
    margin: auto;  /*centers horizontally*/
    display: table;
 }
@@ -26,7 +26,7 @@
    background-color: yellow;
    text-align: center;
 }
-.l1, .l2, .l3{
+ul.list{
     list-style-type: none;
     display: table-cell; 
     border: 1px solid black;
@@ -34,7 +34,7 @@
     font-weight: 100;
     
 }
-.table2{
+.{
     margin-right: auto;
     font-weight: normal;
 }

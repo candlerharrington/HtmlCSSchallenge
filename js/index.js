@@ -8,32 +8,52 @@ var myData =
 			{ name: "Sam", place: "Italy", thing: "Paper"}
 		]
 	};
+function showTable(obj) {
+    var output = "";
 
+    output = "<ul class='table'>";
+    for (var i = 0; i < obj.items.length; i++) {
+        output += " <li> "
+    for (var field in obj.items[i]) {
+        output += "<span class='cell"+ field + "'>" + obj.items[i][field] + "</span>";
+        }
+    output += "</li>"; 
+    }
+    output += "</ul>"
+    document.getElementById("table").innerHTML = output;
+}
+function showList(obj) {
+    var output = "";
+    
+    output = "<ul class='list'>";
+    for (var i = 0; i < obj.items.length; i++) {
+        output += " <li> "
+    for (var field in obj.items[i]) {
+        output += "<span class='cell"+ field + "'>" + field + ": " + obj.items[i][field] + "</span>";
+        }
+    output += "</li>"; 
+    }
+    output += "</ul>";
+    document.getElementById("list").innerHTML = output;
+}
+function showLinks(obj) {
+    var output = "";
+    
+    output = "<ul class='links'>";
+    for (var i = 0; i < obj.items.length; i++) {
+        output += " <li> "
+    for (var name in obj.items[i]) {
+        output += "<span class='cell"+ field + "'>" + obj.items[i][field] + "</span>";
+        }
+    output += "</li>"; 
+    }
+    output += "</ul>";
+    document.getElementById("links").innerHTML = output;
+}
 window.onload = function() {
     
-    showTable();
-    
-    //var btn1 = document.createElement('View 1');
-    //var btn2 = document.createElement('View 2');
-    //var btn3 = document.createElement('View 3');
+    showTable(myData.items);
+    showList(myData.items);
+    showLinks(myData.items);
     
 };
-function showTable() {
-        var output ="";
-        output="<ul class='table1'>";
-        for (var i=0; i< myData.items.length; i++)
-        {
-                output +="<li> <span class='cellname'>" + myData.items[i].name+"</span>";
-                output += "<span class='cellplace'>" +myData.items[i].place + "</span>";
-                output += "<span class='cellthing'>" + myData.items[i].thing+"</span>";
-                output += "</li>";
-        }
-        output +="</ul>"
-        document.getElementById("table1").innerHTML = output;
-}
-function showList() {
-    
-}
-function showLinks() {
-    
-}
